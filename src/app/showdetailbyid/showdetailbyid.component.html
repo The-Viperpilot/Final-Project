@@ -1,0 +1,77 @@
+<div class="whole" >
+    <div class="left">
+        <h2>Personal Details</h2>
+        <div class="prof">
+            <img src="../assets/Avatar.jpg" alt="">
+            <ul class="pd">
+                <li  > <strong>Student ID</strong>  :{{ studentDetails?.id }} </li>
+            <li> <strong>Studetn Name</strong> : {{ studentDetails?.fullname }} </li>
+            <li><strong>Student Age</strong> : {{ studentDetails?.age }} </li>
+            <li> <strong>Student Gender</strong> : {{ studentDetails?.gender }} </li>
+            <li><strong>Phone Number</strong> : {{ studentDetails?.phonenumber }} </li>
+            </ul>
+        </div>
+        <ul class="detail">
+            
+            <li><strong>Student Email</strong> : {{ studentDetails?.emailaddress }} </li>
+            <li><strong>Parent Name</strong> : {{ studentDetails?.parent_name }} </li>
+            <li><strong>Parent Contact</strong> : {{ studentDetails?.parent_contact }} </li>
+            <li><strong>User Name</strong> : {{ studentDetails?.username }} </li>
+            <li><strong>Password</strong>  : {{ studentDetails?.password }} </li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="search" >
+            <label for="search">Enter ID :  </label>
+            <input #ip type="search" name="search" id="search" >
+            <i type="button" (click)="navigateToShowDetail(ip.value)" class="material-symbols-outlined">
+                search
+                </i>
+        </div>
+        <div class="pbar">
+            <h2>Progress Bar</h2>
+            <div class="inpbar">
+                <div class="pb">
+                    <div class="progress-ring" [style.strokeDasharray.px]="circumference" [style.strokeDashoffset.px]="offset">
+                        <svg height="100" width="100">
+                          <circle class="progress-ring__circle" fill="transparent" [attr.stroke]="color" stroke-width="10" r="40" cx="50" cy="50" />
+                        </svg>
+                      </div>
+                </div>
+                
+                  <div class="bart">
+                    <div>
+                        <div style="background-color: black;"></div>
+                        <p>Not Attended</p>
+                    </div>
+                    <div>
+                        <div [style.background-color]="color"></div>
+                        <p>Attended</p>
+                    </div>
+                    <div>
+                        <div class="black"></div>
+                        <p>{{studentDetails.absence}}</p>
+                        <p>- Leaves Taken</p>
+                    </div>
+
+                  </div>
+            </div>
+            
+        </div>
+        <div class="adetail">
+            <h2>Academic Details</h2>
+            <ul >
+                <li> <strong>Grade</strong> :{{ studentDetails?.grade }}</li>
+                <li ><strong>Attendance Percentage</strong> :{{progressValue}} %</li>
+                <li class="feeslist"><strong class="fee">Fee Status</strong> :{{ studentDetails?.tuitionfee }}
+                    <span>
+                        <i class="material-symbols-outlined op" *ngIf="op">done</i>
+                        <i class="material-symbols-outlined cl" *ngIf="cl">close</i>
+                    </span>
+                </li>
+                <li><strong>Department</strong> :{{ studentDetails?.department }}</li>
+                <li><strong>Semester</strong> :{{ studentDetails?.semester }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

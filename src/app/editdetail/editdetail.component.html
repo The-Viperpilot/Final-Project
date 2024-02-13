@@ -1,0 +1,200 @@
+<div class="wholescreen" >
+  <div class="head">
+    <h2 >Add Details</h2>
+  </div>
+  <form class="middle" #ngForm (ngSubmit)="updateStudent()">
+
+    
+      <div class="fbox">
+        <h4>Personal Details</h4>
+        <div class="ipbox" >
+          <div>
+            <label >Full Name</label>
+            <div>
+              <span class="material-symbols-outlined">
+                person
+                </span>
+                <input class="form-control" type="text" id="fullname" name="fullname" [(ngModel)]="studentDetail.fullname" required>
+                
+              </div>
+          </div>
+    
+          
+          <div>
+            <label >Age</label>
+            <div>
+              <span class="material-symbols-outlined">
+                event
+                </span>
+                <input class="form-control" [(ngModel)]="studentDetail.age"  type="number" name="age" id="age">
+            </div>
+          </div>
+    
+          
+          <div>
+            <label for="gender">Gender</label>
+            <div>
+              <span class="material-symbols-outlined">wc</span>
+              <select name="gender" id="gender" class="form-control" [(ngModel)]="studentDetail.gender" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+                </span>
+            </div>
+          </div>
+    
+    
+    
+          <div>
+            <label >Phone Number</label>
+            <div>
+              <span class="material-symbols-outlined">
+                call
+                </span>
+                <input value="+91" type="text" name="phonenumber" id="phonenumber" class="form-control" [(ngModel)]="studentDetail.phonenumber">
+            </div>
+          </div>
+    
+          <div>
+            <label >Email Address</label>
+            <div>
+              <span class="material-symbols-outlined">
+                mail
+                </span>
+                <input type="email" name="emailaddress" id="emailaddress" class="form-control" [(ngModel)]="studentDetail.emailaddress">
+            </div>
+          </div>
+    
+          <div>
+            <label >Parent Name</label>
+            <div>
+              <span class="material-symbols-outlined">
+                supervisor_account
+                </span>
+                <input type="text" name="parent_name" id="parent_name" class="form-control" [(ngModel)]="studentDetail.parent_name">
+            </div>
+          </div>
+    
+          <div>
+            <label >Parent Contact</label>
+            <div>
+              <span class="material-symbols-outlined">
+                perm_contact_calendar
+                </span>
+                <input type="tel" name="parent_contact" id="parent_contact" class="form-control" [(ngModel)]="studentDetail.parent_contact">
+            </div>
+          </div>
+    
+          
+    
+        </div>
+      </div>
+      
+      <div class="sbox">
+        <h4>Organization Details</h4>
+        <div class="ipbox">
+          <div>
+            <label >Absence</label>
+            <div>
+              <span class="material-symbols-outlined">
+                exit_to_app
+                </span>
+                <input type="number" name="absence" id="absence" class="form-control" [(ngModel)]="studentDetail.absence" >
+            </div>
+          </div>
+    
+    
+          <div class="st">
+            <label for="tuitionfee">Fees:</label>
+            <div class="Status">
+              <div class="stdiv">
+                <input class="radio" type="radio" id="html" name="fav_language" value="Paid" [(ngModel)]="studentDetail.tuitionfee"> 
+                <label class="badge bg-success" for="html">Paid</label><br>
+              </div>
+              <div class="stdiv">
+                <input class=" radio" type="radio" id="css" name="fav_language" value="Not Paid" [(ngModel)]="studentDetail.tuitionfee">
+                <label class="badge bg-danger" for="css">Not Paid</label><br>
+              </div>        
+            </div>        
+          </div>
+    
+         
+          <div>
+            <label for="department">Department</label>
+            <div>
+              <span class="material-symbols-outlined">school</span>
+              <select name="department" id="department" class="form-control" [(ngModel)]="studentDetail.department">
+                <option value="Department A">CSE</option>
+                <option value="Department B">EEE</option>
+                <option value="Department C">IT</option>
+                <option value="Department D">MECH</option>
+                <option value="Department E">ECE</option>
+                
+                <!-- Add more options as needed -->
+              </select>
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+                </span>
+            </div>
+          </div>
+          
+    
+          <div>
+            <label >Grade</label>
+            <div>
+              <span class="material-symbols-outlined">
+                hotel_class
+                </span>
+                <input type="text" name="grade" id="grade" class="form-control" [(ngModel)]="studentDetail.grade">
+            </div>
+          </div>
+    
+          <div>
+            <label >Semester</label>
+            <div>
+              <span class="material-symbols-outlined">
+                auto_awesome_motion
+                </span>
+                <input type="number" name="semester" id="semester" class="form-control" [(ngModel)]="studentDetail.semester">
+            </div>
+          </div>
+    
+          
+    
+          
+    
+          <div>
+            
+            <label >User Name</label>
+            <div>
+              <span class="material-symbols-outlined">
+                verified_user
+                </span>
+                <input type="text" name="username" id="username" class="form-control" [(ngModel)]="studentDetail.username">
+            </div>
+          </div>
+    
+    
+          <div>
+            <label >Password</label>
+            <div>
+              <span class="material-symbols-outlined">
+                lock
+                </span>
+                <input type="text" name="password" id="password" class="form-control" [(ngModel)]="studentDetail.password">
+            </div>
+          </div>
+    
+        </div>
+        
+      </div>
+      
+      <button class="glow-on-hover button-85" type="submit" >Save Details</button>
+      
+</form>
+
+
+</div>

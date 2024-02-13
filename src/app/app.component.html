@@ -1,0 +1,47 @@
+<form class="login" *ngIf="flag2">
+    
+    <div class="card">
+        <h1>Admin Login</h1>
+        <img src="../assets/Mahendra.png" alt="clg img" class="clg-logo">
+        <div>
+            <label for="username" >Username</label>
+            <input #us type="text" name="username"  required >
+            
+        </div>
+        <div>
+            <label for="password" >Password</label>
+            <input #ps type="password" name="password" required>
+        </div>
+        <div style="width: 100%;padding: 0px 40px;" *ngIf="wrong">
+            <p style="color: red;font-size: 12px;">We Couldn't find an account matching the username and password you entered.Please try again..</p>
+        </div>
+
+        <button (click)="login(us.value,ps.value)">Login</button>
+
+        <p>Forgot password  <a href="#">Click</a>
+        </p>
+    </div>
+    
+</form>
+
+
+<div class="wholescreen" *ngIf="flag">
+    
+    
+    <app-sidebar></app-sidebar>
+
+    
+    <div class="mainscreen">
+        <main>
+            <!-- <app-delete></app-delete> -->
+            <router-outlet></router-outlet>
+            <!-- <app-homescreen></app-homescreen> -->
+            <!-- <app-adddetail></app-adddetail> -->
+            <!-- <app-showdetail></app-showdetail> -->
+            <!-- <app-showdetailbyid></app-showdetailbyid> -->
+        </main> 
+        <app-footer></app-footer>
+    </div>
+    
+</div>
+

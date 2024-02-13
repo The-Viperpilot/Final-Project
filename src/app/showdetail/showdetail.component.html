@@ -1,0 +1,72 @@
+<div class="over">
+    <div class="detail">
+        <h3 >Details</h3>
+        <button class="add" role="button" routerLink="/adddetail">Add Student +</button>
+    </div>
+    <div class="inbox" [ngClass]="{'blurred': isBlurred}">
+        <table class="table ">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Absence</th>
+                <th scope="col">Parent name</th>
+                <th scope="col">Fee Status</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Password</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">View</th>
+                
+            </tr>
+            </thead>
+            <tbody id="" >
+                <tr *ngFor="let item of students">
+                    <td>{{item.id}}</td>
+                    <td>{{item.fullname}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.gender}}</td>
+                    <td>{{item.grade}}</td>
+                    <td>{{item.absence}}</td>
+                    <td>{{item.parent_name}}</td>
+                    <td >{{item.tuitionfee}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.password}}</td>
+                    <td><a [routerLink]="['/editdetail',item.id]"><span class="material-symbols-outlined edit">
+                        person_edit
+                        </span></a></td>
+
+                    <td ><a   type="button" (click)="calldelete(item.id)" (click)= "openpop()" (click)="applyBlur()" ><span class="material-symbols-outlined delete">
+                        delete
+                        </span></a></td>
+                        
+                        <td ><a type="button" [routerLink]="['/showdetailbyid',item.id]"  ><span class="material-symbols-outlined view">
+                            visibility
+                            </span>   </a></td>
+                        
+                            
+
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="box" *ngIf="popup">
+    <div class="card">
+        <div class="content">
+            <h5>Delete Details?</h5>
+            <p>This Data will be permnently<br> deleted from this record.</p>
+        </div>
+        
+        <div class="buttons">
+            <a routerLink="/showdetail" (click)= "openpop()" (click)="applyBlur()"   class="cancel">Cancel</a>
+            <a routerLink="/showdetail" (click)= "openpop()" (click)="applyBlur()" (click)="confirmDelete()"   class="delete">Delete</a>
+        </div>
+    </div>
+    
+</div>
